@@ -1,0 +1,5 @@
+__pycache__
+manager.log
+manager_settings.json
+dist
+build
