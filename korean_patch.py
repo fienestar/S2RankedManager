@@ -10,7 +10,7 @@ _KOREAN_FONT_STYLE_VALUE = "13"
 _PATCHED_MARKER = "inputs.ALLOWED_CHAT_INPUT = "
 _INPUT_BLOCK_RE = re.compile(
     r"(?m)"
-    r"(?:^ {8}if inputs\.key_press\((?:[^\r\n]+)\) then\r?\n"
+    r"(?:^ {8}if input\.keypressed\((?:[^\r\n]+)\) or input\.keypressed\((?:[^\r\n]+)\) then\r?\n"
     r"^ {12}addToMessage\((?:[^\r\n]+)\)\r?\n"
     r"^ {8}end\r?\n?)+"
 )
@@ -308,9 +308,7 @@ if inputs.key_press(20) then
 end
 if chatMessage == "" and inputs.KOREAN_STATE ~= nil then
     local st = inputs.KOREAN_STATE
-    if st.preview_active or st.L ~= nil or st.V ~= nil or st.T ~= nil then
-        inputs.korean_flush_preview()
-    end
+    inputs.korean_flush_preview()
 end
 for i = 1, #inputs.KEY_INPUTS do
     local entry = inputs.KEY_INPUTS[i]
