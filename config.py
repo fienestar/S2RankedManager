@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 APP_NAME = "S2Ranked Manager"
-APP_VERSION = "0.1.0"
+APP_VERSION = "1.05"
 MANAGER_EXE_NAME = "SpelunkyRankedManager.exe"
 
 MANAGER_OWNER = "fienestar"
